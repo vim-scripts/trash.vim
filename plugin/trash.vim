@@ -1,5 +1,6 @@
 " ==============================================================================
 " ORIGINAL FILE: C:\WINDOWS\Desktop\trash.vim
+" WEB: http://www.vim.org/scripts/script.php?script_id=724
 " CONTENT: script for trashing dd d, D, <Del> actions erasing--- version: 0.1
 " AUTHOR: George Nicolaie Nãstasie 
 " HOSTNAME: PC CAGONLALACHE
@@ -22,6 +23,11 @@
 
 "trash{{{
 fun! Trash()
+
+:if bufname("") == ""
+:echo "The current buffer has no name -- trashing off!"
+
+:elseif bufname("") == bufname("")
         :let dtextbegin="Trashed at: "
         :let dtimp="".strftime("%d/%m/%y - %H:%M:%S")." "
         :let dtext=@@
@@ -40,6 +46,7 @@ fun! Trash()
         :normal "tP
         :silent w %
         :hide
+:endif
 :endfunction
 "}}}
 
@@ -63,11 +70,17 @@ fun! Trash()
 
 "trash view{{{
 :fun! Trashview()
-        :let dir = getcwd()
+
+:if bufname("") == ""
+:echo "Nothing to view -- trashing off!"
+
+:elseif bufname("") == bufname("")
+:let dir = getcwd()
                 :if dir != expand("%:p:h")
                         :cd %:h
                 :endif
         :sv ~/vim/trash/%.trash
+:endif
 :endfunction
 "}}}
 
