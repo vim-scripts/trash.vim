@@ -1,0 +1,9 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=724
+
+Trashed at: 01/08/03 - 08:20:34 from file: C:\Vim\vimfiles\plugin\trash.vim {{{
+" Location of the stored files: ~/vim/trash 
+" Command: Trashon   - start trashing -- default on
+" Command: Trashoff  - stop trashing -- recommended for encrypted files
+" Command: Trashview - view the trash file -- as a readonly file
+<<<<< end deleted text }}}
+
